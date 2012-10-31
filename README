@@ -1,1 +1,9 @@
-Reposioty for Game of Life
+/*
+* Game of Life
+* Input file : sample input file format is attached in this package. Each cell is separated by white space.
+* Compilation: javac GameofLife.java
+* Running the program: 
+* 	1. java GameofLife
+* 	2. type input file name (ex, input.txt)
+*   3. Then, press Enter key. It will display the subsequent generation in console.
+*/
