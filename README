@@ -1,6 +1,7 @@
 /*
 * Game of Life
 * Input file : sample input file format is attached in this package. Each cell is separated by white space.
+*              Input files are saved and opened using WordPad or Notepad++. It does not work if it is edited with Notepad.
 * Compilation: javac *.java
 * Running the program: 
 * 	1. java GameofLife
