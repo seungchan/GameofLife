@@ -1,9 +1,11 @@
 /*
 * Game of Life
 * Input file : sample input file format is attached in this package. Each cell is separated by white space.
-* Compilation: javac GameofLife.java
+* Compilation: javac *.java
 * Running the program: 
 * 	1. java GameofLife
 * 	2. type input file name (ex, input.txt)
 *   3. Then, press Enter key. It will display the subsequent generation in console.
+* Testing input files : more test input files are located in Testcases directory. The name of file is self-explanatory.
+* Compilation Environment: java version 1.6.0_30 on Windows 7 machine
 */
