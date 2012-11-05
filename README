@@ -1,20 +1,20 @@
 /*
-* Game of Life
-* Input file : sample input file format is attached in this package. Each cell is separated by white space.
-*              Input files are saved and opened using WordPad or Notepad++. It does not work if it is edited with Notepad.
-* Compilation: javac GameBoard.java GameBoardUtil.java GameofLife.java
-* Running the program: 
-* 	1. java GameofLife
-* 	2. type input file name (ex, input.txt)
-*   3. Then, press Enter key. It will display the subsequent generation in console.
-* Testing input files : more test input files are located in Testcases directory. The name of file is self-explanatory.
-* 
-* The section below explains how to utilize jUnit for Unit testing
-* Compilation with jUnit : javac -cp junit-4.10.jar *.java
-* Running the program: the same as above
-* Junit test : java -cp .;junit-4.10.jar org.junit.runner.JUnitCore GameofLifeTest
-*
-* Compilation Environment: java version 1.6.0_30 on Windows 7 machine
-* Questions and Comments : slee7411@yahoo.com
-* 
+ Game of Life
+ Input file : sample input file format is attached in this package. Each cell is separated by white space.
+              Input files are saved and opened using WordPad or Notepad++. It does not work if it is edited with Notepad.
+ Compilation: javac GameBoard.java GameBoardUtil.java GameofLife.java
+ Running the program: 
+ 	1. java GameofLife
+ 	2. type input file name (ex, input.txt)
+    3. Then, press Enter key. It will display the subsequent generation in console.
+ Testing input files : more test input files are located in Testcases directory. The name of file is self-explanatory.
+ 
+ The section below explains how to utilize jUnit for Unit testing
+ Compilation with jUnit : javac -cp junit-4.10.jar *.java
+ Running the program: the same as above
+ Junit test : java -cp .;junit-4.10.jar org.junit.runner.JUnitCore GameofLifeTest
+
+ Compilation Environment: java version 1.6.0_30 on Windows 7 machine
+ Questions and Comments : slee7411@yahoo.com
+ 
 */
