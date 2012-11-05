@@ -20,6 +20,13 @@ public class GameBoardUtil {
 	}
 
 	/**
+	 * Set filename from parameter
+	 * @param filename to set
+	 */
+	public static void setFileName(String newFilename) {
+		filename = newFilename;
+	}
+	/**
 	 * Verify input file format, and get the size of board
 	 * 
 	 * @return the size of a game board
