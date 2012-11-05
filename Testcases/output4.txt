@@ -1,6 +1,3 @@
-C:\workspace\zzc_space\GameOfLife\src>java GameofLife
-Enter file name to open:input4.txt
-subsequent generation of:
 0 0 0 0 0
 0 1 1 1 0
 0 1 0 1 0
