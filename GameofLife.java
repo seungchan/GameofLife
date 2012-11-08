@@ -12,12 +12,10 @@ public class GameofLife {
 	
 	/**
 	 * Main function of the program
-	 * 
-	 * @param args
 	 */
 	public static void main(String[] args) {
 		/* Set up initial board size and board cells from input file*/
-		GameBoardUtil.setFileName();
+		GameBoardUtil.setFileNameFromConsole();
 		int[] boardSize = GameBoardUtil.initBoardSize();
 		int[][] initBoard = GameBoardUtil.setBoard(boardSize);
 		
@@ -25,9 +23,9 @@ public class GameofLife {
 		GameBoard board = new GameBoard(initBoard, boardSize[0],boardSize[1]);
 
 		/* get the subsequent game board */
-		int[][] nextBoard = board.getNextGen();
-		
+		int[][] nextBoard = board.getNextGeneration();
+
 		/* print the game board in console */
-		GameBoardUtil.printBoard(nextBoard);
+		GameBoardUtil.printGameBoard(nextBoard);
 	}
 }

@@ -6,34 +6,25 @@
 public class GameBoard {
 
 	private int[][] board;
-	private int row;
-	private int col;
+	private int rowSize;
+	private int colSize;
 	
-	/**
-	 * Constructor for GameBoard
-	 * @param game board to initialize
-	 * @param the size of row
-	 * @param the size of column
-	 */
-	public GameBoard(int[][] newBoard, int newRow, int newCol) {
+	public GameBoard(int[][] newBoard, int rowSize, int colSize) {
 		this.board = newBoard;
-		this.row = newRow;
-		this.col = newCol;
+		this.rowSize = rowSize;
+		this.colSize = colSize;
 	}
 
 	/**
-	 * Get next generation of a game board
-	 * 
-	 * @param the array of game board
 	 * @return the subsequent generation of a game board
 	 */
-	public int[][] getNextGen() {
-		int[][] newBoard = new int[this.row][this.col];
+	public int[][] getNextGeneration() {
+		int[][] newBoard = new int[this.rowSize][this.colSize];
 		int num;
-		for (int i = 0; i < this.row; i++) {
-			for (int j = 0; j < this.col; j++) {
-				num = cntLiveNeighbors(i, j);
-				if (isLiveNext(num, this.board[i][j] == 1))
+		for (int i = 0; i < this.rowSize; i++) {
+			for (int j = 0; j < this.colSize; j++) {
+				num = countLiveNeighborsForCell(i, j);
+				if (isCellLiveNext(num, this.board[i][j] == 1))
 					newBoard[i][j] = 1;
 				else
 					newBoard[i][j] = 0;
@@ -44,94 +35,60 @@ public class GameBoard {
 
 	/**
 	 * Check a cell if it is alive (1) or dead (0) for next generation
-	 * 
-	 * @param number of Neighbors
-	 * @param the current state
 	 * @return boolean of alive or dead
 	 */
-	public boolean isLiveNext(int cntNeighbors, boolean isCurrentLive) {
-		if (isCurrentLive && (cntNeighbors == 2 || cntNeighbors == 3))
+	public boolean isCellLiveNext(int numberOfLiveNeighbors, boolean isCellLiveCurrent) {
+		if (isCellLiveCurrent && (numberOfLiveNeighbors == 2 || numberOfLiveNeighbors == 3))
 			return true;
-		else if (!isCurrentLive && cntNeighbors == 3)
+		else if (!isCellLiveCurrent && numberOfLiveNeighbors == 3)
 			return true;
 		else
 			return false;
 	}
 
 	/**
-	 * count the number of live neighbors for a given cell
 	 * 
-	 * @param index of row
-	 * @param index of column
 	 * @return the number of live neighbors for a given cell
 	 */
-	private int cntLiveNeighbors(int r, int c) {
+	private int countLiveNeighborsForCell(int rowIndex, int columnIndex) {
 		int cnt = 0;
-		for (int i = r - 1; i <= r + 1; i++)
-			for (int j = c - 1; j <= c + 1; j++)
-				if (isInbounds(i, j) && this.board[i][j] == 1
-						&& !(i == r && j == c))
+		for (int i = rowIndex - 1; i <= rowIndex + 1; i++)
+			for (int j = columnIndex - 1; j <= columnIndex + 1; j++)
+				if (isCellInbounds(i, j) && this.board[i][j] == 1
+						&& !(i == rowIndex && j == columnIndex))
 					cnt++;
 		return cnt;
 	}
 
 	/**
 	 * Check a cell if it is inside of game board
-	 * 
-	 * @param index of row
-	 * @param index of column
-	 * @return 
 	 */
-	private boolean isInbounds(int r, int c) {
-		return r >= 0 && r < this.row && c >= 0
-				&& c < this.col;
+	private boolean isCellInbounds(int rowIndex, int columnIndex) {
+		return rowIndex >= 0 && rowIndex < this.rowSize && columnIndex >= 0
+				&& columnIndex < this.colSize;
 	}
 
-	/**
-	 * Getter for game board array
-	 * @return
-	 */
 	public int[][] getBoard() {
 		return board;
 	}
 	
-	/**
-	 * Setter for game board array
-	 * @param board
-	 */
 	public void setBoard(int[][] board) {
 		this.board = board;
 	}
 	
-	/**
-	 * Get the row of game board
-	 * @return
-	 */
-	public int getRow() {
-		return row;
+	public int getRowSize() {
+		return rowSize;
 	}
 	
-	/**
-	 * Set the row of game board
-	 * @param row
-	 */
-	public void setRow(int row) {
-		this.row = row;
+	public void setRowSize(int row) {
+		this.rowSize = row;
 	}
 	
-	/**
-	 * Get the column of game board
-	 * @return
-	 */
-	public int getCol() {
-		return col;
+	public int getColSize() {
+		return colSize;
 	}
 	
-	/**
-	 * Set the column of game board
-	 * @param col
-	 */
-	public void setCol(int col) {
-		this.col = col;
+	public void setColSize(int col) {
+		this.colSize = col;
 	}
 }

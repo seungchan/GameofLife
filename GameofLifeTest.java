@@ -5,31 +5,31 @@ import org.junit.Test;
 public class GameofLifeTest {
 
 	@Test
-	public void testIsLiveNext() {
+	public void testIsCellLiveNext() {
 		// Test based on the number of neighbors and current state
 		GameBoard board = new GameBoard(new int[1][1],1,1);
-		assertEquals(true,board.isLiveNext(2,true));
-		assertEquals(true,board.isLiveNext(3,true));
-		assertEquals(true,board.isLiveNext(3,false));
-		assertEquals(false,board.isLiveNext(0,true));
-		assertEquals(false,board.isLiveNext(1,true));
-		assertEquals(false,board.isLiveNext(4,true));
-		assertEquals(false,board.isLiveNext(5,true));
-		assertEquals(false,board.isLiveNext(6,true));
-		assertEquals(false,board.isLiveNext(7,true));
-		assertEquals(false,board.isLiveNext(8,true));
-		assertEquals(false,board.isLiveNext(0,false));
-		assertEquals(false,board.isLiveNext(1,false));
-		assertEquals(false,board.isLiveNext(2,false));
-		assertEquals(false,board.isLiveNext(4,false));
-		assertEquals(false,board.isLiveNext(5,false));
-		assertEquals(false,board.isLiveNext(6,false));
-		assertEquals(false,board.isLiveNext(7,false));
-		assertEquals(false,board.isLiveNext(8,false));
+		assertEquals(true,board.isCellLiveNext(2,true));
+		assertEquals(true,board.isCellLiveNext(3,true));
+		assertEquals(true,board.isCellLiveNext(3,false));
+		assertEquals(false,board.isCellLiveNext(0,true));
+		assertEquals(false,board.isCellLiveNext(1,true));
+		assertEquals(false,board.isCellLiveNext(4,true));
+		assertEquals(false,board.isCellLiveNext(5,true));
+		assertEquals(false,board.isCellLiveNext(6,true));
+		assertEquals(false,board.isCellLiveNext(7,true));
+		assertEquals(false,board.isCellLiveNext(8,true));
+		assertEquals(false,board.isCellLiveNext(0,false));
+		assertEquals(false,board.isCellLiveNext(1,false));
+		assertEquals(false,board.isCellLiveNext(2,false));
+		assertEquals(false,board.isCellLiveNext(4,false));
+		assertEquals(false,board.isCellLiveNext(5,false));
+		assertEquals(false,board.isCellLiveNext(6,false));
+		assertEquals(false,board.isCellLiveNext(7,false));
+		assertEquals(false,board.isCellLiveNext(8,false));
 	}
 	
 	@Test
-	public void testGetNextGen() {
+	public void testGetNextGeneration() {
 		int[][] nextBoard = getNextBoard("Testcases\\input.txt");
 		int[][] outBoard = getOutBoard("Testcases\\output.txt");
 		assertTrue(Arrays.deepEquals(nextBoard,outBoard));
@@ -55,7 +55,7 @@ public class GameofLifeTest {
 		int[] boardSize = GameBoardUtil.initBoardSize();
 		int[][] initBoard = GameBoardUtil.setBoard(boardSize);
 		GameBoard board = new GameBoard(initBoard, boardSize[0],boardSize[1]);
-		int[][] nextBoard = board.getNextGen();
+		int[][] nextBoard = board.getNextGeneration();
 		return nextBoard;
 	}
 	

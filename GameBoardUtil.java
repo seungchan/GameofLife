@@ -10,22 +10,18 @@ public class GameBoardUtil {
 	
 	private static String filename;
 	/**
-	 * Get input filename from the console input. Use Scanner that provides more
-	 * functionality than BufferedReader
+	 * Use Scanner that provides more functionality than BufferedReader
 	 */
-	public static void setFileName() {
+	public static void setFileNameFromConsole() {
 		Scanner consoleInput = new Scanner(System.in);
 		System.out.print("Enter file name to open:");
 		filename = consoleInput.next();
 	}
 
-	/**
-	 * Set filename from parameter
-	 * @param filename to set
-	 */
 	public static void setFileName(String newFilename) {
 		filename = newFilename;
 	}
+	
 	/**
 	 * Verify input file format, and get the size of board
 	 * 
@@ -113,12 +109,7 @@ public class GameBoardUtil {
 		return board;
 	}
 	
-	/**
-	 * print a game board
-	 * 
-	 * @param game board
-	 */
-	public static void printBoard(int[][] pBoard) {
+	public static void printGameBoard(int[][] pBoard) {
 		String line = "";
 		System.out.println("subsequent generation of:");
 		for (int i = 0; i < pBoard.length; i++) {
